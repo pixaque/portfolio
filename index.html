@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pixaque — Design studio by Asad Ullah. Website design, logo & brand identity, print media.">
+  <title>Pixaque — Asad Ullah</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lightbox.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       CURSOR
+       ═══════════════════════════════════════════════ -->
+  <div id="cur-dot"></div>
+  <div id="cur-ring"></div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════════════ -->
+  <nav class="nav" id="main-nav">
+    <a href="#" class="nav__logo">PIXAQUE</a>
+
+    <ul class="nav__links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+
+    <nav class="footer__socials" aria-label="Social links">
+<a href="https://www.upwork.com/freelancers/~01839c54e2187e7071?viewMode=1" class="footer__social" target="_blank" rel="noopener" aria-label="Upwork">up</a>
+    <a href="https://linkedin.com/in/asad-ullah-nusrat-48119273/" class="footer__social" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+    </nav>
+    
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero__bg"   aria-hidden="true"></div>
+    <div class="hero__grid" aria-hidden="true"></div>
+
+    <p class="hero__eyebrow">Available for Projects &middot; 2025</p>
+
+    <h1 class="hero__headline">
+      Design<br>
+      <span class="stroke">That</span><br>
+      <span class="green">Speaks.</span>
+    </h1>
+
+    <div class="hero__sub">
+      <p class="hero__desc">
+        I&rsquo;m Asad Ullah &mdash; the designer behind Pixaque.
+        I craft websites, brand identities, and print media that
+        don&rsquo;t just look good, they work.
+      </p>
+      <div class="hero__actions">
+        <a href="#work"  class="btn--primary">View Work</a>
+        <a href="#about" class="btn--ghost">About me &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       MARQUEE
+       ═══════════════════════════════════════════════ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__inner">
+      <div class="marquee__item">Website Design <b>&#10022;</b> Logo Design <b>&#10022;</b> Print Media <b>&#10022;</b> Brand Identity <b>&#10022;</b> UI&nbsp;/&nbsp;UX <b>&#10022;</b> Visual Design <b>&#10022;</b></div>
+      <div class="marquee__item">Website Design <b>&#10022;</b> Logo Design <b>&#10022;</b> Print Media <b>&#10022;</b> Brand Identity <b>&#10022;</b> UI&nbsp;/&nbsp;UX <b>&#10022;</b> Visual Design <b>&#10022;</b></div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       STATS
+       ═══════════════════════════════════════════════ -->
+  <div class="stats">
+    <div class="stat fade-in">
+      <div class="stat__number">127+</div>
+      <div class="stat__label">Projects Delivered</div>
+    </div>
+    <div class="stat fade-in">
+      <div class="stat__number">10+</div>
+      <div class="stat__label">Years Experience</div>
+    </div>
+    <div class="stat fade-in">
+      <div class="stat__number">3000+</div>
+      <div class="stat__label">Hours Work Delivered</div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PORTFOLIO
+       ═══════════════════════════════════════════════ -->
+  <section class="section" id="work">
+    <div class="section__head">
+      <div>
+        <p class="section__label">Selected Work</p>
+        <h2 class="section__title">Portfolio</h2>
+      </div>
+      <span class="section__count" aria-hidden="true">09</span>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="filter-tabs" role="group" aria-label="Filter portfolio by category">
+      <button class="filter-tab is-active" data-filter="all">All</button>
+      <button class="filter-tab" data-filter="web">Web Design</button>
+      <button class="filter-tab" data-filter="logo">Logos</button>
+      <button class="filter-tab" data-filter="print">Print</button>
+    </div>
+
+    <!--
+    ╔══════════════════════════════════════════════════════════╗
+    ║  HOW TO ADD YOUR IMAGES                                  ║
+    ║                                                          ║
+    ║  1. Copy your image into the images/ folder:             ║
+    ║       images/web/project-name.jpg                        ║
+    ║       images/logo/brand-name.jpg                         ║
+    ║       images/print/poster-name.jpg                       ║
+    ║                                                          ║
+    ║  2. Find the card below you want to update.              ║
+    ║     On its <div class="pcard__thumb"> add:               ║
+    ║       style="background-image:url('images/web/file.jpg')"║
+    ║                                                          ║
+    ║  3. Remove the class "pcard__thumb--empty" from that div.║
+    ║     The placeholder icon disappears automatically.       ║
+    ╚══════════════════════════════════════════════════════════╝
+    -->
+    <div class="portfolio-grid">
+
+      <!-- ── WEB 1 (wide / featured) ── -->
+      <article class="pcard pcard--wide fade-in" data-category="web">
+        <div class="pcard__thumb pcard__thumb--empty" style="background-image: url('images/web/giftini.jpg'); background-position: top; background-size: auto 350%;">
+          <div class="ph-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+              <rect x="2" y="3" width="18" height="14" rx="2" stroke="#fff" stroke-width="1.2"/>
+              <path d="M7 20h8M11 17v3" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="ph-label">Giftini &middot;</span>
+        </div>
+        <div class="pcard__overlay">
+          <p class="pcard__category">Web Design</p>
+          <h3 class="pcard__title">E-commerce Redesign</h3>
+        </div>
+        <div class="pcard__arrow" aria-hidden="true">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+            <path d="M2 11L11 2M11 2H5M11 2V8" stroke="#0a0a0a" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </article>
+
+      <!-- ── PRINT 1 ── -->
+      <article class="pcard fade-in" data-category="print">
+        <div class="pcard__thumb" style="background-image: url('images/print/5-flyer-3-fold.jpg');">
+          <div class="ph-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+              <rect x="3" y="2" width="16" height="20" rx="1" stroke="#fff" stroke-width="1.2"/>
+              <path d="M7 7h8M7 11h8M7 15h5" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="pcard__overlay">
+          <p class="pcard__category">Print Media</p>
+          <h3 class="pcard__title">General Flyer</h3>
+        </div>
+        <div class="pcard__arrow" aria-hidden="true">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+            <path d="M2 11L11 2M11 2H5M11 2V8" stroke="#0a0a0a" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </article>
+
+      <!-- ── Print 2 ── -->
+      <article class="pcard fade-in" data-category="print">
+        <div class="pcard__thumb" style="background-image: url('images/print/1-flyer-3-fold.jpg');">
+          <div class="ph-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+              <polygon points="11,2 20,18 2,18" stroke="#fff" stroke-width="1.2" fill="none"/>
+            </svg>
+          </div>
+        </div>
+        <div class="pcard__overlay">
+          <p class="pcard__category">Print Design</p>
+          <h3 class="pcard__title">General Flyer</h3>
+        </div>
+        <div class="pcard__arrow" aria-hidden="true">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+            <path d="M2 11L11 2M11 2H5M11 2V8" stroke="#0a0a0a" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </article>
+
+      <!-- ── PRINT 3 ── -->
+      <article class="pcard fade-in" data-category="print">
+        <div class="pcard__thumb" style="background-image: url('images/print/3-flyer-6-fold.jpg');">
+          <div class="ph-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+              <circle cx="11" cy="11" r="9" stroke="#fff" stroke-width="1.2"/>
+              <circle cx="11" cy="11" r="4" stroke="#fff" stroke-width="1.2"/>
+            </svg>
+          </div>
+        </div>
+        <div class="pcard__overlay">
+          <p class="pcard__category">Print Media</p>
+          <h3 class="pcard__title">General Flyer</h3>
+        </div>
+        <div class="pcard__arrow" aria-hidden="true">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+            <path d="M2 11L11 2M11 2H5M11 2V8" stroke="#0a0a0a" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </article>
+
+      <!-- ── WEB 2 ── -->
+      <article class="pcard fade-in" data-category="web">
+        <div class="pcard__thumb" style="background-image: url('images/web/kai_bbq_home_v_1.jpg'); background-position: bottom;">
+          <div class="ph-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+              <rect x="2" y="3" width="18" height="14" rx="2" stroke="#fff" stroke-width="1.2"/>
+              <path d="M7 20h8M11 17v3" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="pcard__overlay">
+          <p class="pcard__category">Web Design</p>
+          <h3 class="pcard__title">KAI BBQ Website</h3>
+        </div>
+        <div class="pcard__arrow" aria-hidden="true">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+            <path d="M2 11L11 2M11 2H5M11 2V8" stroke="#0a0a0a" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </article>
+
+      <!-- ── web 2 (wide) ── -->
+      <article class="pcard pcard--wide fade-in" data-category="web">
+        <div class="pcard__thumb" style="background-image: url('images/web/autumncourt_index_01.jpg'); background-position: top;">
+          <div class="ph-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+              <rect x="3" y="2" width="16" height="20" rx="1" stroke="#fff" stroke-width="1.2"/>
+              <path d="M7 7h8M7 11h8M7 15h5" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="pcard__overlay">
+          <p class="pcard__category">Web Design</p>
+          <h3 class="pcard__title">Autumn Court</h3>
+        </div>
+        <div class="pcard__arrow" aria-hidden="true">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+            <path d="M2 11L11 2M11 2H5M11 2V8" stroke="#0a0a0a" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </article>
+
+      <!-- ── Web 3 ── -->
+      <article class="pcard fade-in" data-category="web">
+        <div class="pcard__thumb" style="background-image: url('images/web/twotons-3_Home.jpg'); background-position: top;">
+          <div class="ph-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+              <polygon points="11,2 20,18 2,18" stroke="#fff" stroke-width="1.2" fill="none"/>
+            </svg>
+          </div>
+        </div>
+        <div class="pcard__overlay">
+          <p class="pcard__category">Web Design</p>
+          <h3 class="pcard__title">TwoTons Constructions</h3>
+        </div>
+        <div class="pcard__arrow" aria-hidden="true">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+            <path d="M2 11L11 2M11 2H5M11 2V8" stroke="#0a0a0a" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </article>
+
+      <!-- ── WEB 3 ── -->
+      <article class="pcard fade-in" data-category="web">
+        <div class="pcard__thumb" style="background-image: url('images/web/seedshack_index-a.jpg'); background-position: top;">
+          <div class="ph-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+              <rect x="2" y="3" width="18" height="14" rx="2" stroke="#fff" stroke-width="1.2"/>
+              <path d="M7 20h8M11 17v3" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="pcard__overlay">
+          <p class="pcard__category">Web Design</p>
+          <h3 class="pcard__title">SeedShack Website</h3>
+        </div>
+        <div class="pcard__arrow" aria-hidden="true">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+            <path d="M2 11L11 2M11 2H5M11 2V8" stroke="#0a0a0a" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </article>
+
+    </div><!-- /portfolio-grid -->
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SERVICES
+       ═══════════════════════════════════════════════ -->
+  <section class="section" id="services" style="padding-top: 0">
+    <div class="section__head">
+      <div>
+        <p class="section__label">What I Do</p>
+        <h2 class="section__title">Services</h2>
+      </div>
+      <span class="section__count" aria-hidden="true">03</span>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card fade-in">
+        <p class="service-card__num">01</p>
+        <div class="service-card__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect x="1" y="2" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M6 19h8M10 16v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="service-card__title">Website Design</h3>
+        <p class="service-card__desc">Responsive, conversion-focused websites with sharp UI, smooth interactions, and layouts built to impress. From landing pages to full multi-page sites.</p>
+      </div>
+
+      <div class="service-card fade-in">
+        <p class="service-card__num">02</p>
+        <div class="service-card__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <polygon points="10,1 19,17 1,17" stroke="currentColor" stroke-width="1.2" fill="none"/>
+          </svg>
+        </div>
+        <h3 class="service-card__title">Logo &amp; Identity</h3>
+        <p class="service-card__desc">Brand marks, wordmarks, and full identity systems that carry meaning and hold up at any scale. Every symbol crafted with intent.</p>
+      </div>
+
+      <div class="service-card fade-in">
+        <p class="service-card__num">03</p>
+        <div class="service-card__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect x="2" y="1" width="16" height="18" rx="1" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M6 6h8M6 10h8M6 14h5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="service-card__title">Print Media</h3>
+        <p class="service-card__desc">Brochures, posters, business cards, and packaging &mdash; designed for print with precision. Production-ready files, every time.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       ABOUT
+       ═══════════════════════════════════════════════ -->
+  <section class="about" id="about">
+
+    <div class="about__visual" aria-hidden="true">
+      <span class="about__monogram">AU</span>
+      <div class="about__badge">
+        <p class="about__badge-name">Pixaque</p>
+        <p class="about__badge-title">Design Studio</p>
+      </div>
+    </div>
+
+    <div class="about__content">
+      <p class="section__label">About</p>
+      <h2 class="about__title">Design is <em>craft</em>,<br>not decoration.</h2>
+      <p class="about__body">
+        I&rsquo;m Asad Ullah, a multidisciplinary designer operating under the Pixaque studio.
+        With over 5 years of experience, I work with brands, startups, and businesses who take
+        their visual presence seriously. My process is direct &mdash; listen, distill,
+        then design with purpose.
+      </p>
+      <ul class="skills" aria-label="Skills">
+        <li class="skill">Figma</li>
+        <li class="skill">Adobe XD</li>
+        <li class="skill">Illustrator</li>
+        <li class="skill">Photoshop</li>
+        <li class="skill">InDesign</li>
+        <li class="skill">After Effects</li>
+        <li class="skill">Webflow</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════ -->
+  <footer class="footer">
+    <p class="footer__logo">PIXAQUE</p>
+    <p class="footer__copy">&copy; 2026 Asad Ullah / Pixaque. All rights reserved.</p>
+    <nav class="footer__socials" aria-label="Social links">
+    <!--
+      <a href="https://behance.net/pixaque"   class="footer__social" target="_blank" rel="noopener" aria-label="Behance">Be</a>
+      <a href="https://dribbble.com/pixaque"  class="footer__social" target="_blank" rel="noopener" aria-label="Dribbble">Dr</a>
+      <a href="https://twitter.com/pixaque"   class="footer__social" target="_blank" rel="noopener" aria-label="Twitter / X">Tw</a>
+    -->
+      <a href="https://www.upwork.com/freelancers/~01839c54e2187e7071?viewMode=1" class="footer__social" target="_blank" rel="noopener" aria-label="Upwork">up</a>
+      <a href="https://linkedin.com/in/asad-ullah-nusrat-48119273/" class="footer__social" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+    </nav>
+  </footer>
+
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+  <script src="js/lightbox.js"></script>
+
+</body>
+</html>
