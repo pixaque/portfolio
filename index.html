@@ -16,6 +16,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/lightbox.css">
 </head>
 <body>
@@ -501,6 +502,59 @@
 
   </section>
 
+
+  <!-- ═══════════════════════════════════════════════
+       CONTACT
+       ═══════════════════════════════════════════════ -->
+  <section class="contact" id="contact">
+
+    <div class="contact__info" data-anim="fade-right">
+      <p class="section__label">Get In Touch</p>
+      <h2 class="contact__title">
+        Let&rsquo;s make<br>
+        <span>something.</span>
+      </h2>
+      <ul class="contact__links">
+        <li>
+          <a href="https://www.upwork.com/freelancers/~01839c54e2187e7071?viewMode=1" class="contact__link">
+            <span class="contact__link-icon">UP</span>
+            Asad Ullah nusrat (Upwork)
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/asad-ullah-nusrat-48119273/" class="contact__link" target="_blank" rel="noopener">
+            <span class="contact__link-icon">in</span>
+            linkedin.com/in/asadullah
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+
+    <form class="contact-form" data-anim="fade-left" id="contact-form" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="name">Name</label>
+          <input class="form-input" id="name" type="text" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">Email</label>
+          <input class="form-input" id="email" type="email" placeholder="your@email.com" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="project">Project Type</label>
+        <input class="form-input" id="project" type="text" placeholder="Web design, logo, print&hellip;">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="message">Message</label>
+        <textarea class="form-textarea" id="message" placeholder="Tell me about your project&hellip;" required></textarea>
+      </div>
+      <button class="btn--send" type="submit">Send Message &rarr;</button>
+    </form>
+
+  </section>
+
   <!-- ═══════════════════════════════════════════════
        FOOTER
        ═══════════════════════════════════════════════ -->
@@ -521,6 +575,7 @@
 
   <!-- JavaScript -->
   <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
   <script src="js/lightbox.js"></script>
 
 </body>

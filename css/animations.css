@@ -1,0 +1,219 @@
+/* ============================================================
+   PIXAQUE — Scroll Animations
+   animations.css
+   ============================================================
+   HOW TO USE:
+   Add this file to your <head> after style.css:
+     <link rel="stylesheet" href="css/animations.css">
+
+   Then add animation classes to your HTML elements.
+   Each section below explains which class to add where.
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   BASE — all animated elements start hidden
+   The JS in animations.js adds .is-visible to trigger them
+   ------------------------------------------------------------ */
+[data-anim] {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+[data-anim].is-visible {
+  opacity: 1;
+}
+
+
+/* ============================================================
+   ANIMATION TYPES
+   Use as: data-anim="fade-up"  data-anim="fade-left" etc.
+   ============================================================ */
+
+/* ── Fade Up (default — good for most things) ── */
+[data-anim="fade-up"] {
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+[data-anim="fade-up"].is-visible {
+  transform: translateY(0);
+}
+
+/* ── Fade Down ── */
+[data-anim="fade-down"] {
+  transform: translateY(-30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+[data-anim="fade-down"].is-visible {
+  transform: translateY(0);
+}
+
+/* ── Fade Left (slide in from right) ── */
+[data-anim="fade-left"] {
+  transform: translateX(50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+[data-anim="fade-left"].is-visible {
+  transform: translateX(0);
+}
+
+/* ── Fade Right (slide in from left) ── */
+[data-anim="fade-right"] {
+  transform: translateX(-50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+[data-anim="fade-right"].is-visible {
+  transform: translateX(0);
+}
+
+/* ── Scale Up — good for cards ── */
+[data-anim="scale-up"] {
+  transform: scale(0.92);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-anim="scale-up"].is-visible {
+  transform: scale(1);
+}
+
+/* ── Clip reveal (top to bottom) — good for images ── */
+[data-anim="clip"] {
+  clip-path: inset(0 0 100% 0);
+  transition: opacity 0.01s, clip-path 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+[data-anim="clip"].is-visible {
+  clip-path: inset(0 0 0% 0);
+  opacity: 1;
+}
+
+/* ── Line reveal — good for big headlines ── */
+[data-anim="line"] {
+  overflow: hidden;
+}
+[data-anim="line"] .line-inner {
+  display: block;
+  transform: translateY(105%);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-anim="line"].is-visible .line-inner {
+  transform: translateY(0);
+}
+
+/* ── Counter — numbers count up (handled in JS) ── */
+[data-anim="counter"] {
+  transition: opacity 0.5s ease;
+}
+
+
+/* ============================================================
+   STAGGER DELAYS
+   Add data-delay="1" through data-delay="6" to stagger
+   children in a group (e.g. service cards, stat blocks)
+   ============================================================ */
+[data-delay="1"] { transition-delay: 0.05s; }
+[data-delay="2"] { transition-delay: 0.15s; }
+[data-delay="3"] { transition-delay: 0.25s; }
+[data-delay="4"] { transition-delay: 0.35s; }
+[data-delay="5"] { transition-delay: 0.45s; }
+[data-delay="6"] { transition-delay: 0.55s; }
+
+
+/* ============================================================
+   SECTION-SPECIFIC ANIMATIONS
+   Copy the data-anim attributes shown in the comments below
+   into your HTML elements.
+   ============================================================ */
+
+/* ── HERO ──────────────────────────────────────────────────
+   These animate on page load (no scroll needed).
+   Already handled by CSS keyframes in style.css.
+   No changes needed in the hero section.
+   ─────────────────────────────────────────────────────────── */
+
+/* ── MARQUEE ───────────────────────────────────────────────
+   No animation needed — it already scrolls continuously.
+   ─────────────────────────────────────────────────────────── */
+
+/* ── STATS ─────────────────────────────────────────────────
+   Add to each .stat:
+     <div class="stat" data-anim="fade-up" data-delay="1">
+     <div class="stat" data-anim="fade-up" data-delay="2">
+     <div class="stat" data-anim="fade-up" data-delay="3">
+
+   The big numbers count up automatically via JS.
+   ─────────────────────────────────────────────────────────── */
+
+/* ── SECTION HEADERS ───────────────────────────────────────
+   Add to each .section__head:
+     <div class="section__head" data-anim="fade-up">
+   ─────────────────────────────────────────────────────────── */
+
+/* ── FILTER TABS ───────────────────────────────────────────
+   Add to .filter-tabs wrapper:
+     <div class="filter-tabs" data-anim="fade-up" data-delay="1">
+   ─────────────────────────────────────────────────────────── */
+
+/* ── PORTFOLIO CARDS ───────────────────────────────────────
+   Add to each .pcard:
+     <article class="pcard pcard--wide" data-anim="scale-up" data-delay="1">
+     <article class="pcard"             data-anim="scale-up" data-delay="2">
+     <article class="pcard"             data-anim="scale-up" data-delay="3">
+   ─────────────────────────────────────────────────────────── */
+
+/* ── SERVICE CARDS ─────────────────────────────────────────
+   Add to each .service-card:
+     <div class="service-card" data-anim="fade-up" data-delay="1">
+     <div class="service-card" data-anim="fade-up" data-delay="2">
+     <div class="service-card" data-anim="fade-up" data-delay="3">
+   ─────────────────────────────────────────────────────────── */
+
+/* ── ABOUT ─────────────────────────────────────────────────
+   Add to about visual and content:
+     <div class="about__visual" data-anim="fade-right">
+     <div class="about__content" data-anim="fade-left">
+   ─────────────────────────────────────────────────────────── */
+
+/* ── TESTIMONIALS ──────────────────────────────────────────
+   Add to each .tcard:
+     <div class="tcard" data-anim="fade-up" data-delay="1">
+     <div class="tcard" data-anim="fade-up" data-delay="2">
+   ─────────────────────────────────────────────────────────── */
+
+/* ── CONTACT ───────────────────────────────────────────────
+   Add to left and right columns:
+     <div class="contact__info"  data-anim="fade-right">
+     <form class="contact-form"  data-anim="fade-left">
+   ─────────────────────────────────────────────────────────── */
+
+
+/* ============================================================
+   ACCENT LINE DRAW
+   The border-bottom line on section headers animates in.
+   Applied automatically to all .section__head elements via JS.
+   ============================================================ */
+.section__head {
+  position: relative;
+}
+
+.section__head::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 1px;
+  width: 0;
+  background: var(--accent);
+  transition: width 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-delay: 0.2s;
+}
+
+.section__head.is-visible::after {
+  width: 100%;
+}
+
+
+/* ============================================================
+   STAT NUMBER COUNTER STYLES
+   ============================================================ */
+.stat__number {
+  display: inline-block;
+  min-width: 1ch;
+}
