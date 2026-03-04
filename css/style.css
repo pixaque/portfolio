@@ -42,8 +42,14 @@
   --card-logo:   #0a0c18;
   --card-print:  #0c0a18;
 
+  /*
    --font-display: 'Syne', sans-serif;
   --font-body:    'DM Sans', sans-serif;
+
+  */
+  --font-display: 'Unbounded', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+
 
   --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -728,7 +734,7 @@ body::before {
 .about__monogram {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 22vw;
+  font-size: 32vw;
   letter-spacing: -0.06em;
   -webkit-text-stroke: 1px #222;
   color: transparent;
@@ -1101,5 +1107,208 @@ body::before {
     gap: 18px;
     text-align: center;
     padding: 28px 24px;
+  }
+}
+
+/* ============================================================
+   TESTIMONIALS
+   Add this to the bottom of style.css
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Testimonials section wrapper
+   ------------------------------------------------------------ */
+.testimonials {
+  padding: 100px 52px;
+  border-top: 1px solid var(--border);
+  background: #070707;
+}
+
+/* ------------------------------------------------------------
+   Two-column grid
+   ------------------------------------------------------------ */
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  margin-top: 56px;
+}
+
+/* ------------------------------------------------------------
+   Individual card
+   ------------------------------------------------------------ */
+.tcard {
+  background: #0a0a0a;
+  padding: 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.tcard:hover {
+  background: #0d0d0d;
+}
+
+/* Accent line on hover — same pattern as service cards */
+.tcard::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.tcard:hover::after {
+  transform: scaleX(1);
+}
+
+/* Large decorative quote mark */
+.tcard__quote-mark {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 6rem;
+  line-height: 0.6;
+  color: var(--accent);
+  opacity: 0.18;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  top: 36px;
+  right: 44px;
+}
+
+/* ------------------------------------------------------------
+   Quote text
+   ------------------------------------------------------------ */
+.tcard__body {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--paper);
+  font-weight: 300;
+  max-width: 480px;
+  position: relative;
+  z-index: 1;
+}
+
+.tcard__body::before {
+  content: '\201C'; /* opening " */
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  line-height: 0;
+  vertical-align: -0.25em;
+  margin-right: 4px;
+}
+
+.tcard__body::after {
+  content: '\201D'; /* closing " */
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  line-height: 0;
+  vertical-align: -0.25em;
+  margin-left: 4px;
+}
+
+/* ------------------------------------------------------------
+   Author row
+   ------------------------------------------------------------ */
+.tcard__author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+}
+
+/* Avatar — replace background-image with a real photo if you have one */
+.tcard__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--border);
+  border: 1px solid #2a2a2a;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tcard__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Initials fallback shown when no photo is set */
+.tcard__avatar-initials {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
+.tcard__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tcard__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: -0.01em;
+  color: var(--paper);
+}
+
+.tcard__role {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Star rating */
+.tcard__stars {
+  display: flex;
+  gap: 3px;
+  margin-left: auto;
+}
+
+.tcard__star {
+  color: var(--accent);
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
+/* ------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------ */
+@media (max-width: 860px) {
+  .testimonials {
+    padding: 60px 24px;
+  }
+
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tcard {
+    padding: 36px 28px;
+  }
+
+  .tcard__body {
+    font-size: 0.95rem;
   }
 }
