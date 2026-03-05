@@ -180,7 +180,7 @@ body::before {
 }
 
 .nav__links a {
-  color: var(--muted);
+  color: var(--paper);
   font-size: 0.8rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -734,7 +734,7 @@ body::before {
 .about__monogram {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 32vw;
+  font-size: 20vw;
   letter-spacing: -0.06em;
   -webkit-text-stroke: 1px #222;
   color: transparent;
