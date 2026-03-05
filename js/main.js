@@ -124,6 +124,18 @@ hoverTargets.forEach(function (el) {
   el.addEventListener('mouseleave', function () { document.body.classList.remove('hov'); });
 });
 
+function resizeCanvas() {
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+  canvas.style.width  = window.innerWidth  + 'px';
+  canvas.style.height = window.innerHeight + 'px';
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+window.addEventListener('orientationchange', function () {
+  setTimeout(resizeCanvas, 100);
+});
+
 
   /* ----------------------------------------------------------
      2. NAV — add .scrolled class after 50px
