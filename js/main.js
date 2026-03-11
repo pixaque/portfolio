@@ -196,21 +196,127 @@ window.addEventListener('orientationchange', function () {
 
 
   /* ----------------------------------------------------------
-     5. CONTACT FORM — basic submit handler (extend as needed)
+     5. CONTACT FORM — Formspree integration
+     Replace YOUR_FORM_ID with your actual Formspree endpoint
+     e.g. https://formspree.io/f/xyzabcde
      ---------------------------------------------------------- */
   var form = document.getElementById('contact-form');
+
   if (form) {
+    var btn        = form.querySelector('.btn--send');
+    var inputs     = form.querySelectorAll('.form-input, .form-textarea');
+    var ENDPOINT   = 'https://formspree.io/f/mzdjrjez';
+
+    /* -- Inline validation helper -- */
+    function showError(input, msg) {
+      input.style.borderColor = '#ff4d4d';
+      var err = input.parentNode.querySelector('.form-error');
+      if (!err) {
+        err = document.createElement('span');
+        err.className = 'form-error';
+        err.style.cssText = 'font-size:0.65rem;color:#ff4d4d;margin-top:4px;display:block;letter-spacing:0.06em;';
+        input.parentNode.appendChild(err);
+      }
+      err.textContent = msg;
+    }
+
+    function clearError(input) {
+      input.style.borderColor = '';
+      var err = input.parentNode.querySelector('.form-error');
+      if (err) err.remove();
+    }
+
+    function validateForm() {
+      var valid = true;
+      var nameEl    = document.getElementById('name');
+      var emailEl   = document.getElementById('email');
+      var messageEl = document.getElementById('message');
+
+      clearError(nameEl);
+      clearError(emailEl);
+      clearError(messageEl);
+
+      if (!nameEl.value.trim()) {
+        showError(nameEl, 'Please enter your name');
+        valid = false;
+      }
+
+      if (!emailEl.value.trim()) {
+        showError(emailEl, 'Please enter your email');
+        valid = false;
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim())) {
+        showError(emailEl, 'Please enter a valid email address');
+        valid = false;
+      }
+
+      if (!messageEl.value.trim()) {
+        showError(messageEl, 'Please write a message');
+        valid = false;
+      }
+
+      return valid;
+    }
+
+    /* -- Clear errors on input -- */
+    inputs.forEach(function (input) {
+      input.addEventListener('input', function () { clearError(input); });
+    });
+
+    /* -- Submit -- */
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var btn = form.querySelector('.btn--send');
-      btn.textContent = 'Sent ✓';
-      btn.style.background = '#a8d434';
-      setTimeout(function () {
-        btn.textContent = 'Send Message →';
-        btn.style.background = '';
-        form.reset();
-      }, 3000);
+
+      if (!validateForm()) return;
+
+      /* Loading state */
+      btn.textContent  = 'Sending…';
+      btn.disabled     = true;
+      btn.style.opacity = '0.7';
+
+      var data = {
+        name:    document.getElementById('name').value.trim(),
+        email:   document.getElementById('email').value.trim(),
+        project: document.getElementById('project').value.trim(),
+        message: document.getElementById('message').value.trim()
+      };
+
+      fetch(ENDPOINT, {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body:    JSON.stringify(data)
+      })
+      .then(function (res) { return res.json(); })
+      .then(function (res) {
+        if (res.ok || res.next) {
+          /* Success */
+          btn.textContent   = 'Sent ✓';
+          btn.style.opacity = '1';
+          btn.style.background = '#a8d434';
+          form.reset();
+          setTimeout(function () {
+            btn.textContent      = 'Send Message →';
+            btn.style.background = '';
+            btn.disabled         = false;
+          }, 4000);
+        } else {
+          throw new Error(res.error || 'Submission failed');
+        }
+      })
+      .catch(function (err) {
+        /* Error state */
+        btn.textContent      = 'Failed — try again';
+        btn.style.background = '#ff4d4d';
+        btn.style.opacity    = '1';
+        btn.disabled         = false;
+        setTimeout(function () {
+          btn.textContent      = 'Send Message →';
+          btn.style.background = '';
+        }, 4000);
+        console.error('Form error:', err);
+      });
     });
   }
+
+  
 
 })();
