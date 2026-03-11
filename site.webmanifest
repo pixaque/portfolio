@@ -1,0 +1,21 @@
+{
+  "name": "Pixaque — Asad Ullah",
+  "short_name": "Pixaque",
+  "description": "Graphic & Web Designer — Website design, logo & brand identity, print media.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#c8f04a",
+  "icons": [
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

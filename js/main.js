@@ -317,6 +317,4 @@ window.addEventListener('orientationchange', function () {
     });
   }
 
-  
-
 })();
